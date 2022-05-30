@@ -48,54 +48,60 @@ print(day_trip_random)
 user_input_confirmation = input(" To confirm . please enter y/n :  ")
 
 if user_input_confirmation =="y" :
-   print(f" your destination is {destination_random} , you eat at {restaurant_random} , your transporation is {transportation_random} , and your entertainment is {entertainment_random} ")
+    print(f" your destination is {destination_random} , you eat at {restaurant_random} , your transporation is {transportation_random} , and your entertainment is {entertainment_random} ")
 
+else: 
 
 # if user wants another choice : destination , ............
 
-# new random destination 
-def new_destination(user_input_confirmation):  
-  while user_input_confirmation != 'y':
-    destination_random = random.choice(destinations)
-    user_input_confirmation= input(f"We are sorry that the previous option did not work for your. We have seleceted {destination_random} as another trip destination. Works for you? ")
-  else:
-    print(f"You have selected {destination_random} destination.")
+# new random destination
 
-new_destination(user_input_confirmation)
+    def new_destination(user_input_confirmation):  
+        while user_input_confirmation != 'y':
+            destination_random = random.choice(destinations)
+            user_input_confirmation= input(f"We are sorry that the previous option did not work for your. We have seleceted {destination_random} as another trip destination. Works for you? ")
+        else:
+            print(f"You have selected {destination_random} destination.")
+            pass
+
+    new_destination(user_input_confirmation)
 
 
 # new random restaurant
-def new_restaurant(user_input_confirmation):  
-  while user_input_confirmation != 'y':
-    restaurant_random  = random.choice(restaurants)
-    user_input_confirmation= input(f"We are sorry that the previous option did not work for your. We have seleceted {restaurant_random} as another trip destination. Works for you? ")
-  else:
-    print(f"You have selected {restaurant_random} restaurants")
+    def new_restaurant(user_input_confirmation):  
+        while user_input_confirmation != 'y':
+            restaurant_random  = random.choice(restaurants)
+            user_input_confirmation= input(f"We are sorry that the previous option did not work for your. We have seleceted {restaurant_random} as another trip destination. Works for you? ")
+        else:
+             print(f"You have selected {restaurant_random} restaurants")
+             pass 
 
-new_restaurant(user_input_confirmation)
+    new_restaurant(user_input_confirmation)
 
 # new random transportation
-def new_transportation(user_input_confirmation):  
-  while user_input_confirmation != 'y':
-    transportation_random  = random.choice(transportations)
-    user_input_confirmation= input(f"We are sorry that the previous option did not work for your. We have seleceted {transportation_random} as another trip destination. Works for you? ")
-  else:
-    print(f"You have selected {transportation_random} restaurants")
+    def new_transportation(user_input_confirmation):  
+        while user_input_confirmation != 'y':
+            transportation_random  = random.choice(transportations)
+            user_input_confirmation= input(f"We are sorry that the previous option did not work for your. We have seleceted {transportation_random} as another trip destination. Works for you? ")
+        else:
+            print(f"You have selected {transportation_random} restaurants")
+            pass 
 
-new_transportation(user_input_confirmation)
+    new_transportation(user_input_confirmation)
 
 # new random entertainment
-def new_entertainment(user_input_confirmation):  
-  while user_input_confirmation != 'y':
-    entertainment_random  = random.choice(entertainment_random)
-    user_input_confirmation= input(f"We are sorry that the previous option did not work for your. We have seleceted {entertainment_random} as another trip destination. Works for you? ")
-  else:
-    print(f"You have selected {entertainment_random} restaurants")
+    def new_entertainment(user_input_confirmation):  
+        while user_input_confirmation != 'y':
+            entertainment_random  = random.choice(entertainments)
+            user_input_confirmation= input(f"We are sorry that the previous option did not work for your. We have seleceted {entertainment_random} as another trip destination. Works for you? ")
+        else:
+            print(f"You have selected {entertainment_random} restaurants")
+            pass
 
-new_entertainment(user_input_confirmation)
+    new_entertainment(user_input_confirmation)
 
-print(f"You day trip selection is completed ")
-print(f" your destination is {destination_random} , you eat at {restaurant_random} , your transporation is {transportation_random} , and your entertainment is {entertainment_random} ")
+    print(f"You day trip selection is completed ")
+# print(f" your destination is (new_destination.destination_random) , you eat at {new_restaurant.restaurant_random} , your transporation is {new_transportatio.transportation_random} , and your entertainment is {new_entertainment.entertainment_random} ")
 
 
 
