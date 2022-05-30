@@ -20,23 +20,83 @@ import random
 # 1- greeting message
 # 2- lists : Destinations, Restaurants, mode of transportations, and entertainments.
 # 3- random choices for each list 
+# 4- display the random choice
+# 5- confirmation and otherwise
 
 
-# greeting function
+# greeting message
 print("**** Welcome to Week 2 Project : Day Trip Generator ****")
 print("**** Computer has 4 random destinations in southern California to select ****")
 
-destinations    = ["La Jolla", "Oceanside", "Laguna Beach", " Huntington Beach"]
-destination     = random.choice(destinations)
+# lists & random function 
+destinations           = ["La Jolla", "Oceanside", "Laguna Beach", " Huntington Beach"]
+destination_random     = random.choice(destinations)
 
-restaurants     = ["Herringbone La Jolla", "Harbor Fish & chips", "Salt Greek Grill", " Blue Gold"]
-restaurant      = random.choice(restaurants) 
+restaurants            = ["Herringbone", "Harbor Fish & chips", "Salt Greek Grill", " Blue Gold"]
+restaurant_random      = random.choice(restaurants) 
 
-transportations = ["rental car" , "train" , "Helicopter", " bus tour"]
-transportation  = random.choice(transportations)
+transportations        = ["rental car" , "train" , "Helicopter", " bus tour"]
+transportation_random  = random.choice(transportations)
 
-entertainments  = [ "Downtown Tours", "Surf show" , " Downtown & Galary tours", "Air show"] 
-entertainment   = random.choice(entertainments)
+entertainments         = [ "Downtown Tours", "Surf show" , " Downtown & Galary tours", "Air show"] 
+entertainment_random   = random.choice(entertainments)
+
+
+# first random choice 
+day_trip_random = (f"Computer has selected {destination_random} for your destination, {restaurant_random} restaurant to eat, {transportation_random} to travel around there , and a {entertainment_random}.")
+print(day_trip_random)
+user_input_confirmation = input(" To confirm . please enter y/n :  ")
+
+if user_input_confirmation =="y" :
+   print(f" your destination is {destination_random} , you eat at {restaurant_random} , your transporation is {transportation_random} , and your entertainment is {entertainment_random} ")
+
+
+# if user wants another choice : destination , ............
+
+# new random destination 
+def new_destination(user_input_confirmation):  
+  while user_input_confirmation != 'y':
+    destination_random = random.choice(destinations)
+    user_input_confirmation= input(f"We are sorry that the previous option did not work for your. We have seleceted {destination_random} as another trip destination. Works for you? ")
+  else:
+    print(f"You have selected {destination_random} destination.")
+
+new_destination(user_input_confirmation)
+
+
+# new random restaurant
+def new_restaurant(user_input_confirmation):  
+  while user_input_confirmation != 'y':
+    restaurant_random  = random.choice(restaurants)
+    user_input_confirmation= input(f"We are sorry that the previous option did not work for your. We have seleceted {restaurant_random} as another trip destination. Works for you? ")
+  else:
+    print(f"You have selected {restaurant_random} restaurants")
+
+new_restaurant(user_input_confirmation)
+
+# new random transportation
+def new_transportation(user_input_confirmation):  
+  while user_input_confirmation != 'y':
+    transportation_random  = random.choice(transportations)
+    user_input_confirmation= input(f"We are sorry that the previous option did not work for your. We have seleceted {transportation_random} as another trip destination. Works for you? ")
+  else:
+    print(f"You have selected {transportation_random} restaurants")
+
+new_transportation(user_input_confirmation)
+
+# new random entertainment
+def new_entertainment(user_input_confirmation):  
+  while user_input_confirmation != 'y':
+    entertainment_random  = random.choice(entertainment_random)
+    user_input_confirmation= input(f"We are sorry that the previous option did not work for your. We have seleceted {entertainment_random} as another trip destination. Works for you? ")
+  else:
+    print(f"You have selected {entertainment_random} restaurants")
+
+new_entertainment(user_input_confirmation)
+
+print(f"You day trip selection is completed ")
+print(f" your destination is {destination_random} , you eat at {restaurant_random} , your transporation is {transportation_random} , and your entertainment is {entertainment_random} ")
+
 
 
 
