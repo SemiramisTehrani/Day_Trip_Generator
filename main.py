@@ -62,7 +62,10 @@ else:
             user_input_confirmation= input(f"We are sorry that the previous option did not work for your. We have seleceted {destination_random} as another trip destination. Works for you? ")
         else:
             print(f"You have selected {destination_random} destination.")
-            pass
+        
+        final_destination = destination_random
+        
+        return final_destination
 
     new_destination(user_input_confirmation)
 
@@ -74,7 +77,10 @@ else:
             user_input_confirmation= input(f"We are sorry that the previous option did not work for your. We have seleceted {restaurant_random} as another trip destination. Works for you? ")
         else:
              print(f"You have selected {restaurant_random} restaurants")
-             pass 
+    
+        final_restaurant = restaurant_random
+        
+        return final_restaurant
 
     new_restaurant(user_input_confirmation)
 
@@ -84,10 +90,15 @@ else:
             transportation_random  = random.choice(transportations)
             user_input_confirmation= input(f"We are sorry that the previous option did not work for your. We have seleceted {transportation_random} as another trip destination. Works for you? ")
         else:
-            print(f"You have selected {transportation_random} restaurants")
-            pass 
+            print(f"You have selected {transportation_random} transportation")
+    
+        final_transportation = transportation_random 
+        
+        return final_transportation 
 
     new_transportation(user_input_confirmation)
+
+
 
 # new random entertainment
     def new_entertainment(user_input_confirmation):  
@@ -95,13 +106,19 @@ else:
             entertainment_random  = random.choice(entertainments)
             user_input_confirmation= input(f"We are sorry that the previous option did not work for your. We have seleceted {entertainment_random} as another trip destination. Works for you? ")
         else:
-            print(f"You have selected {entertainment_random} restaurants")
-            pass
-
+            print(f"You have selected {entertainment_random} entertainment")
+        
+        final_entertainment = entertainment_random 
+        
+        return final_entertainment
+    
     new_entertainment(user_input_confirmation)
 
+    
     print(f"You day trip selection is completed ")
-# print(f" your destination is (new_destination.destination_random) , you eat at {new_restaurant.restaurant_random} , your transporation is {new_transportatio.transportation_random} , and your entertainment is {new_entertainment.entertainment_random} ")
+
+
+    print(f" your destination is {new_destination.final_destination} , you eat at {new_restaurant.final_restaurant} , your transporation is {new_transportation.final_transportation} , and your entertainment is {new_entertainment.final_entertainment} ")
 
 
 
