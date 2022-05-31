@@ -11,6 +11,9 @@
 #(5 points): As a developer, I want all of my functions to have a Single Responsibility. Remember, each function should do just one thing!
 
 
+# 05/31/2022 : couldn't figure out how to print the complete trip choices when user eneters "n" 
+#            implementing James's video feedback to store and call out a variable of a function file. --> check the comment on line 73
+#            fixed all the mismatch info inside print()
 
 import random
 
@@ -26,7 +29,7 @@ import random
 
 # greeting message
 print("**** Welcome to Week 2 Project : Day Trip Generator ****")
-print("**** Computer has 4 random destinations in southern California to select ****")
+print("**** Computer has 4 random destinations, transportations, restaurants, and entertainments in southern California to select ****")
 
 # lists & random function 
 destinations           = ["La Jolla", "Oceanside", "Laguna Beach", " Huntington Beach"]
@@ -67,14 +70,15 @@ else:
         
         return final_destination
 
-    new_destination(user_input_confirmation)
+    confirmed_destination = new_destination(user_input_confirmation)
+    # in order to call out a variable of a function , we have to save the fucntion return value in a variable inside the main.py 
 
 
 # new random restaurant
     def new_restaurant(user_input_confirmation):  
         while user_input_confirmation != 'y':
             restaurant_random  = random.choice(restaurants)
-            user_input_confirmation= input(f"We are sorry that the previous option did not work for your. We have seleceted {restaurant_random} as another trip destination. Works for you? ")
+            user_input_confirmation= input(f"We are sorry that the previous option did not work for your. We have seleceted {restaurant_random} as another dinning place. Works for you? ")
         else:
              print(f"You have selected {restaurant_random} restaurants")
     
@@ -82,13 +86,15 @@ else:
         
         return final_restaurant
 
-    new_restaurant(user_input_confirmation)
+    confirmed_restaurant = new_restaurant(user_input_confirmation)
+# in order to call out a variable of a function , we have to save the fucntion return value in a variable inside the main.py 
+    
 
 # new random transportation
     def new_transportation(user_input_confirmation):  
         while user_input_confirmation != 'y':
             transportation_random  = random.choice(transportations)
-            user_input_confirmation= input(f"We are sorry that the previous option did not work for your. We have seleceted {transportation_random} as another trip destination. Works for you? ")
+            user_input_confirmation= input(f"We are sorry that the previous option did not work for your. We have seleceted {transportation_random} as another transportation. Works for you? ")
         else:
             print(f"You have selected {transportation_random} transportation")
     
@@ -96,15 +102,15 @@ else:
         
         return final_transportation 
 
-    new_transportation(user_input_confirmation)
-
+    confirmed_transportation = new_transportation(user_input_confirmation)
+# in order to call out a variable of a function , we have to save the fucntion return value in a variable inside the main.py 
 
 
 # new random entertainment
     def new_entertainment(user_input_confirmation):  
         while user_input_confirmation != 'y':
             entertainment_random  = random.choice(entertainments)
-            user_input_confirmation= input(f"We are sorry that the previous option did not work for your. We have seleceted {entertainment_random} as another trip destination. Works for you? ")
+            user_input_confirmation= input(f"We are sorry that the previous option did not work for your. We have seleceted {entertainment_random} as another entertainment. Works for you? ")
         else:
             print(f"You have selected {entertainment_random} entertainment")
         
@@ -112,13 +118,13 @@ else:
         
         return final_entertainment
     
-    new_entertainment(user_input_confirmation)
-
+    confirmed_entertainment = new_entertainment(user_input_confirmation)
+# in order to call out a variable of a function , we have to save the fucntion return value in a variable inside the main.py 
     
     print(f"You day trip selection is completed ")
 
 
-    print(f" your destination is {new_destination.final_destination} , you eat at {new_restaurant.final_restaurant} , your transporation is {new_transportation.final_transportation} , and your entertainment is {new_entertainment.final_entertainment} ")
+    print(f" your destination is {confirmed_destination} , you eat at {confirmed_restaurant} , your transporation is {confirmed_transportation} , and your entertainment is {confirmed_entertainment} ")
 
 
 
